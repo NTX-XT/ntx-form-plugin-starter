@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc --build",
+    "clean": "tsc --build --clean",
+    "dist": "babel src/nac-cards.ts --out-file dist/bundle.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,11 @@
     "lit": "^2.6.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.12",
+    "@babel/plugin-proposal-decorators": "^7.20.13",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-typescript": "^7.18.6",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.4"
   }
