@@ -1,12 +1,12 @@
-import { html, LitElement } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/all/lit-all.min.js';
+import { html, LitElement } from 'lit';
 
 export class NACCard extends LitElement {
 
     static properties = {
-        title: { type: String, required: true },
-        text: { type: String, required: true },
-        imageUrl: { type: String, required: false },
-        link: { type: String, required: false },
+        title: { type: String },
+        text: { type: String },
+        imageUrl: { type: String },
+        link: { type: String },
     };
 
     static getMetaConfig() {
