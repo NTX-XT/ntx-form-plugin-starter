@@ -1,24 +1,15 @@
-import { html, LitElement } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { html, LitElement } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/all/lit-all.min.js';
 
-@customElement('nac-card')
 export class NACCard extends LitElement {
-    @property({ type: String })
-    title = "This is a card";
 
-    @property({ type: String })
-    subtitle = "It looks cool :)";
+    static properties = {
+        title: { type: String, required: true },
+        text: { type: String, required: true },
+        imageUrl: { type: String, required: false },
+        link: { type: String, required: false },
+    };
 
-    @property({ type: String })
-    text = "Use plugins to refine and create your unique UX";
-
-    @property({ type: String })
-    imageUrl = "image";
-
-    @property({ type: String })
-    link = "https://";
-
-    static getMetaConfig(): Promise<NintexPlugin> | NintexPlugin {
+    static getMetaConfig() {
         return {
             controlName: 'Card',
             fallbackDisableSubmit: false,
@@ -71,3 +62,7 @@ export class NACCard extends LitElement {
         super();
     }
 }
+
+
+const elementName = 'nac-card';
+customElements.define(elementName, NACCard);
