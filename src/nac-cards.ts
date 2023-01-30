@@ -1,6 +1,6 @@
 import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-
+import {config} from './nac-cards.config'
 
 @customElement('nac-card')
 export default class NACCard extends LitElement {
@@ -20,7 +20,7 @@ export default class NACCard extends LitElement {
     link = "https://";
 
     static getMetaConfig() {
-        return import('./nac-cards.config');
+        return config;
     }
 
     render() {

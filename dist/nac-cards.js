@@ -6,9 +6,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
+import { config } from './nac-cards.config';
 let NACCard = class NACCard extends LitElement {
     static getMetaConfig() {
-        return import('./nac-cards.config');
+        return config;
     }
     render() {
         return html `

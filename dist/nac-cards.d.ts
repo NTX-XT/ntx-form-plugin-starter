@@ -5,7 +5,7 @@ export default class NACCard extends LitElement {
     text: string;
     imageUrl: string;
     link: string;
-    static getMetaConfig(): Promise<typeof import("./nac-cards.config")>;
+    static getMetaConfig(): import("./nintex-plugin").NintexPlugin;
     render(): import("lit-html").TemplateResult<1>;
     constructor();
 }
