@@ -19,13 +19,7 @@ export class NACCard extends LitElement {
             properties: {
                 title: {
                     type: 'string',
-                    title: 'The card title',
-                    required: true
-                },
-                subtitle: {
-                    type: 'string',
-                    title: 'The card subtitle',
-                    required: false
+                    title: 'The card title'
                 },
                 text: {
                     type: 'string',
@@ -35,7 +29,10 @@ export class NACCard extends LitElement {
                 imageUrl: {
                     type: 'string',
                     title: 'the Url to an image',
-                    required: false
+                },
+                link: {
+                    type: 'string',
+                    title: 'link url',
                 }
             },
             standardProperties: {
