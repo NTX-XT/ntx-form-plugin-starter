@@ -2,8 +2,8 @@ import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 
-@customElement('nintex-sample-grid-js')
-export default class Card extends LitElement {
+@customElement('nac-card')
+export default class NACCard extends LitElement {
     @property({ type: String })
     title = "This is a card";
 
@@ -33,4 +33,11 @@ export default class Card extends LitElement {
                 <a href="${this.link}" class="btn btn-primary">Link</a>
             </div>`;
     }
+
+    constructor() {
+        super();
+    }
 }
+
+const elementName = 'nac-card';
+customElements.define(elementName, NACCard);
