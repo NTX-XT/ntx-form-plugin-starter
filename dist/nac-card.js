@@ -11,7 +11,7 @@ export class NACCard extends LitElement {
 
     static getMetaConfig() {
         return {
-            controlName: 'Card',
+            controlName: 'custom-card',
             fallbackDisableSubmit: false,
             description: 'Example of a card with dynamic data',
             groupName: 'Visual',
@@ -64,5 +64,5 @@ export class NACCard extends LitElement {
 }
 
 
-const elementName = 'nac-card';
+const elementName = 'custom-card';
 customElements.define(elementName, NACCard);
