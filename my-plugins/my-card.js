@@ -6,6 +6,8 @@ export default class MyCard extends LitElement {
         cardText: { type: String },
         imageUrl: { type: String },
         link: { type: String },
+        darkMode: { type: Boolean },
+        centerText: { type: Boolean }
     };
 
     static getMetaConfig() {
@@ -18,19 +20,27 @@ export default class MyCard extends LitElement {
             properties: {
                 cardTitle: {
                     type: 'string',
-                    title: 'The card title'
+                    title: 'Title'
                 },
                 cardText: {
                     type: 'string',
-                    title: 'Any text for the body of the card'
+                    title: 'Text'
                 },
                 imageUrl: {
                     type: 'string',
-                    title: 'the Url to an image',
+                    title: 'Image URL',
                 },
                 link: {
                     type: 'string',
-                    title: 'link url',
+                    title: 'Link URL',
+                },
+                darkMode: {
+                    type: 'boolean',
+                    title: 'Dark mode'
+                },
+                centerText: {
+                    type: 'boolean',
+                    title: 'Center text'
                 }
             },
             standardProperties: {
@@ -43,10 +53,11 @@ export default class MyCard extends LitElement {
     }
 
     render() {
+        let cardStyle = this.darkMode ? "text-white bg-dark" : "";
         return html`
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-            <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+            <div class="card text-center ${cardStyle} mb-3" style="max-width: 18rem;">
                 <h5 class="card-header">${this.cardTitle}</h5>
                 <img src="${this.imageUrl}" class="card-img-top p-3" alt=""/>
                 <div class="card-body">
@@ -60,8 +71,9 @@ export default class MyCard extends LitElement {
         super();
         this.cardText = "This is a card";
         this.cardTitle = "My Card plugin";
-        this.imageUrl = "https://www.nintex.com/wp-content/uploads/2018/05/logo-nintex-full.svg";
+        this.imageUrl = "https://www.nintex.com/wp-content/themes/portent_nintex/ui/images/nintex_logo.svgDa";
         this.link = "https://www.nintex.com/"
+        this.darkMode = false;
     }
 }
 
