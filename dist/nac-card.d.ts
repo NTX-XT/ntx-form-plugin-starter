@@ -1,8 +1,7 @@
 import { LitElement } from 'lit';
-export default class NACCard extends LitElement {
-    title: string;
-    subtitle: string;
-    text: string;
+export default class CustomCard extends LitElement {
+    name: string;
+    cardtext: string;
     imageUrl: string;
     link: string;
     static getMetaConfig(): import("./nintex-plugin").NintexPlugin;
