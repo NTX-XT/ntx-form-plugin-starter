@@ -1,29 +1,25 @@
 export const config = {
-    controlName: 'Card',
+    controlName: 'custom-card2',
     fallbackDisableSubmit: false,
     description: 'Example of a card with dynamic data',
     groupName: 'Visual',
     version: '1.0',
     properties: {
-        title: {
+        name: {
             type: 'string',
-            title: 'The card title',
-            required: true
+            title: 'The card title'
         },
-        subtitle: {
+        cardtext: {
             type: 'string',
-            title: 'The card subtitle',
-            required: false
-        },
-        text: {
-            type: 'string',
-            title: 'Any text for the body of the card',
-            required: false
+            title: 'Any text for the body of the card'
         },
         imageUrl: {
             type: 'string',
             title: 'the Url to an image',
-            required: false
+        },
+        link: {
+            type: 'string',
+            title: 'link url',
         }
     },
     standardProperties: {
