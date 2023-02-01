@@ -46,9 +46,9 @@ export default class MyCard extends LitElement {
         return html`
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-            <div class="card text-white bg-dark mb-3" style="width: 18rem;">
-                <div class="card-header">${this.cardTitle}</div>
-                <img src="${this.imageUrl}" class="card-img-top" alt="Plugin!"/>
+            <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+                <h5 class="card-header">${this.cardTitle}</h5>
+                <img src="${this.imageUrl}" class="card-img-top p-3" alt=""/>
                 <div class="card-body">
                     <p class="card-text">${this.cardText}</p>
                     <a href="${this.link}" class="btn btn-primary">Go!</a>
@@ -58,6 +58,10 @@ export default class MyCard extends LitElement {
 
     constructor() {
         super();
+        this.cardText = "This is a card";
+        this.cardTitle = "My Card plugin";
+        this.imageUrl = "https://www.nintex.com/wp-content/uploads/2018/05/logo-nintex-full.svg";
+        this.link = "https://www.nintex.com/"
     }
 }
 
