@@ -1,30 +1,29 @@
-import { html, LitElement } from 'lit';
+import { html, LitElement } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/all/lit-all.min.js';
 
-export class NACCard extends LitElement {
+export class CustomCard extends LitElement {
 
     static properties = {
-        title: { type: String },
-        text: { type: String },
+        name: { type: String },
+        cardtext: { type: String },
         imageUrl: { type: String },
         link: { type: String },
     };
 
     static getMetaConfig() {
         return {
-            controlName: 'custom-card',
+            controlName: 'custom-card2',
             fallbackDisableSubmit: false,
             description: 'Example of a card with dynamic data',
             groupName: 'Visual',
             version: '1.0',
             properties: {
-                title: {
+                name: {
                     type: 'string',
                     title: 'The card title'
                 },
-                text: {
+                cardtext: {
                     type: 'string',
-                    title: 'Any text for the body of the card',
-                    required: false
+                    title: 'Any text for the body of the card'
                 },
                 imageUrl: {
                     type: 'string',
@@ -49,8 +48,8 @@ export class NACCard extends LitElement {
             <div class="card" style="width: 18rem;">
                 <img src="${this.imageUrl}" class="card-img-top" alt="...">
                 <div class="card-body">
-                <h5 class="card-title">${this.title}</h5>
-                <p class="card-text">${this.text}</p>
+                <h5 class="card-title">${this.name}</h5>
+                <p class="card-text">${this.cardtext}</p>
                 <a href="${this.link}" class="btn btn-primary">Link</a>
             </div>`;
     }
@@ -61,5 +60,5 @@ export class NACCard extends LitElement {
 }
 
 
-const elementName = 'custom-card';
-customElements.define(elementName, NACCard);
+const elementName = 'custom-card2';
+customElements.define(elementName, CustomCard);
