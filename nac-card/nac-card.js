@@ -1,20 +1,13 @@
-import { html, LitElement } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { html, LitElement } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/all/lit-all.min.js';
 import { config } from './nac-card.config'
 
-@customElement('custom-card2')
-export default class CustomCard extends LitElement {
-    @property({ type: String })
-    name = "This is a card";
-
-    @property({ type: String })
-    cardtext = "Use plugins to refine and create your unique UX";
-
-    @property({ type: String })
-    imageUrl = "image";
-
-    @property({ type: String })
-    link = "https://";
+export default class MyCard extends LitElement {
+    static properties = {
+        name: { type: String },
+        cardtext: { type: String },
+        imageUrl: { type: String },
+        link: { type: String },
+    };
 
     static getMetaConfig() {
         return config;
@@ -37,3 +30,6 @@ export default class CustomCard extends LitElement {
         super();
     }
 }
+
+const elementName = 'my-card';
+customElements.define(elementName, MyCard);

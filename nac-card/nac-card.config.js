@@ -1,7 +1,5 @@
-import { NintexPlugin } from './nintex-plugin';
-
-export const config: NintexPlugin = {
-    controlName: 'custom-card2',
+export const config = {
+    controlName: 'my-card',
     fallbackDisableSubmit: false,
     description: 'Example of a card with dynamic data',
     groupName: 'Visual',
