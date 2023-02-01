@@ -2,8 +2,8 @@ import { html, LitElement } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/all/lit
 
 export default class MyCard extends LitElement {
     static properties = {
-        name: { type: String },
-        cardtext: { type: String },
+        title: { type: String },
+        text: { type: String },
         imageUrl: { type: String },
         link: { type: String },
     };
@@ -16,11 +16,11 @@ export default class MyCard extends LitElement {
             groupName: 'Visual',
             version: '1.0',
             properties: {
-                name: {
+                title: {
                     type: 'string',
                     title: 'The card title'
                 },
-                cardtext: {
+                text: {
                     type: 'string',
                     title: 'Any text for the body of the card'
                 },
@@ -34,8 +34,8 @@ export default class MyCard extends LitElement {
                 }
             },
             standardProperties: {
-                fieldLabel: true,
-                description: true,
+                fieldLabel: false,
+                description: false,
                 defaultValue: false,
                 readOnly: false,
             },
