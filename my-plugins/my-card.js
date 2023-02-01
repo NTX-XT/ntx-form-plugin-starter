@@ -2,10 +2,10 @@ import { html, LitElement } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/all/lit
 
 export default class MyCard extends LitElement {
     static properties = {
-        title: { type: String },
-        text: { type: String },
-        imageUrl: { type: String },
-        link: { type: String },
+        title: { type: String } = "My Card",
+        text: { type: String } = "This is teh cards text",
+        imageUrl: { type: String } = "https://www.nintex.com/wp-content/uploads/2018/05/logo-nintex-full.svg",
+        link: { type: String } = "https://www.nintex.com",
     };
 
     static getMetaConfig() {
@@ -46,12 +46,13 @@ export default class MyCard extends LitElement {
         return html`
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-            <div class="card" style="width: 18rem;">
-                <img src="${this.imageUrl}" class="card-img-top" alt="...">
+            <div class="card text-white bg-dark mb-3">
+                <div class="header">${this.title}</div>
+                <img src="${this.imageUrl}" class="card-img-top" alt="Plugin!"/>
                 <div class="card-body">
-                <h5 class="card-title">${this.name}</h5>
-                <p class="card-text">${this.cardtext}</p>
-                <a href="${this.link}" class="btn btn-primary">Link</a>
+                    <p class="card-text">${this.text}</p>
+                    <a href="${this.link}" class="btn btn-primary">Link</a>
+                </div>
             </div>`;
     }
 
