@@ -12,8 +12,8 @@ export default class MyCard extends LitElement {
         return {
             controlName: 'my-card',
             fallbackDisableSubmit: false,
-            description: 'Example of a card with dynamic data',
-            groupName: 'Visual',
+            description: 'Example of a visual card',
+            groupName: 'My Plugins',
             version: '1.0',
             properties: {
                 cardTitle: {
