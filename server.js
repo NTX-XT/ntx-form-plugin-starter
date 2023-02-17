@@ -4,15 +4,12 @@ import pkg from 'open';
 
 const port = 8888
 
-// ngrok.connect({
-//     addr: 8888,
-//     configPath: './ngrok.yml'
-// }).then((tunnel) => {
-const server = http.createServer({
+http.createServer({
     root: './dist',
     cors: true,
-});
-server.listen(port)
-    //     console.log(tunnel);
-    //     pkg(tunnel);
-    // });
+}).listen(port)
+
+ngrok.connect(port).then((tunnel) => {
+    console.log(tunnel);
+    pkg(tunnel);
+})
