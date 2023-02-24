@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "allowJs": false,
     "target": "es2019",
     "module": "es2020",
     "lib": ["es2020", "DOM", "DOM.Iterable"],
@@ -9,8 +10,9 @@
     "outDir": "dist",
     "declaration": true,
     "isolatedModules": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "sourceMap": true
   },
-  "include": ["src/**/*.ts", "src/run.ts1", "src/run.ts1", "src/components/my-card/my-card.ts1"],
-  "exclude": ["dist/**/*.js"]
+  "include": ["src/**/*.ts"],
+  "exclude": ["**/dist", "**/server"]
 }

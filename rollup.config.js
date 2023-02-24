@@ -18,14 +18,17 @@ const getPrimaryComponent = source =>
         .filter(x => existsSync(x));
 
 const individualComponents = getPrimaryComponent('./src/components');
+const additionalFiles = []
+// const additionalFiles = ['./src/index.ts']
 
 export default [{
-    input: ['src/index.ts', ...individualComponents],
+    input: [...additionalFiles, ...individualComponents],
     output: {
         format: 'es',
         chunkFileNames: '[name]-[hash].js',
         entryFileNames: '[name].js',
         dir: './dist',
+        sourcemap: true,
     },
 
     plugins: [

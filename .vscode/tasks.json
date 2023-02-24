@@ -9,15 +9,15 @@
 				"isDefault": true
 			},
 			"problemMatcher": [],
-			"label": "npm: build",
-			"detail": "rollup -c"
+			"label": "Build",
+			"detail": "Build all components and refresh js files"
 		},
 		{
 			"type": "npm",
 			"script": "server",
 			"problemMatcher": [],
-			"label": "npm: server",
-			"detail": "node server.js"
+			"label": "Run server",
+			"detail": "Runs the local server for hosting the plugins as a separate task"
 		}
 	]
 }

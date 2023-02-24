@@ -39,3 +39,4 @@ var config = {
 };
 
 export { config };
+//# sourceMappingURL=my-card.config-3ad8ccd8.js.map
