@@ -10,14 +10,16 @@
 			},
 			"problemMatcher": [],
 			"label": "Build",
-			"detail": "Build all components and refresh js files"
+			"detail": "Build all components and refresh js files",
+			"path": "./ts"
 		},
 		{
 			"type": "npm",
 			"script": "server",
 			"problemMatcher": [],
 			"label": "Run server",
-			"detail": "Runs the local server for hosting the plugins as a separate task"
+			"detail": "Runs the local server for hosting the plugins as a separate task",
+			"path": "./ts"
 		}
 	]
 }
