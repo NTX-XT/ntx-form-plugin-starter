@@ -1,40 +1,34 @@
-# Self-host and debug plugins
+# NAC Plugin Starter Kit
 
-## Self-host
+The NAC Plugin Starter Kit is a template repository used to develop NAC Form Plugins using Lit. The kit contains:
 
-1. On the VS Code menu bar, go to Terminal > Run Task and select the **Run Server** task
+- a server to locally host your plugins
+- a javascript sample project
+- a typescript sample project
 
-![](./docs/images/135408.png)
+## Get Started
 
-2. On the browser window, click the Advanced button and then the Continue to 127.0.0.1 (unsafe) link
- 
-![](./docs/images/135855.png)
+Install dependencies:
+    
+    ts\npm i 
+    js\npm i
+    lecaldev\npm i
 
-3. Each component will be compiled as a separate js file. Right click and copy the link to the plugin you want to register.
- 
-![](./docs/images/140147.png)
+Run either the typescript or the javascript server:
 
-4. On your NAC tenant's Form plugins section, add your plugin using the copied link.
- 
-![](./docs/images/140450.png)
+    ts\npm start
+    js\npm start
 
-5. Validate that the plugin is workign by adding it to a new form
- 
-![](./docs/images/141008.png)
+The above are also available as a VS Code Task - `Serve (JS)` and `Serve (TS)`.
 
-![](./docs/images/141337.png)
- 
-## Change and deploy
+Register the plugin in your NAC tenant
 
-1. Update your typescript code
-   
-2. On a VS Code terminal, type **npm run build**, or run the Build task (Menu Bar > Terminal > Run Task and select the **Build** task)
-   
-3. Make sure the server is running
+## Updating and testing changes
 
-![](./docs/images/141726.png)
+Any update to the js files will be automatically reflected in NAC.
 
-4. Close and reopen the form
+For Typescript plugins, runing `npm run build` in the `ts` project folder will refresh the generated javascript files. This is also provided as the Default Build Task for VS Code - *Terminal > Run Build Task...*
+
 
 
 
