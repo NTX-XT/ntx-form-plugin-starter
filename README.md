@@ -25,7 +25,11 @@ Register the plugin in your NAC tenant using the url of the plugin file - `https
 
 ## Updating and testing changes
 
-Use the VS Code tasks to run the server of your preference as a background task. For Javascript plugins, you can update the files and refersh the form in NAC. For Typescript plugins, runing `npm run build` in the `ts` project folder will refresh the generated javascript files. This is also provided as the Default Build Task for VS Code - *Terminal > Run Build Task...*
+Use the VS Code tasks to run the server of your preference as a background task.
+
+For Javascript plugins, you can update the files and refersh the form in NAC.
+
+For Typescript plugins, runing `npm run build` in the `ts` project folder will refresh the generated javascript files. ThiCosmes is also provided as the Default Build Task for VS Code - *Terminal > Run Build Task...
 
 
 
