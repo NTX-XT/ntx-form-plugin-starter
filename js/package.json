@@ -3,8 +3,8 @@
     "version": "1.0.0",
     "type": "module",
     "scripts": {
-        "server": "node ../localdev -f ./plugins",
-        "start": "npm run server"
+        "serve": "node ../localdev -f ./plugins -p 8081",
+        "start": "npm run serve"
     },
     "author": "",
     "license": "ISC",

@@ -9,25 +9,27 @@
 				"isDefault": true
 			},
 			"problemMatcher": [],
-			"label": "Build Typescript Project",
-			"detail": "Build all components and refresh js files",
+			"label": "Build",
+			"detail": "Build typescript plugins",
 			"path": "./ts"
 		},
 		{
 			"type": "npm",
-			"script": "server",
+			"script": "start",
 			"problemMatcher": [],
-			"label": "Run server (TS)",
-			"detail": "Runs the local server for hosting the plugins as a separate task",
-			"path": "./ts"
+			"label": "Serve (TS)",
+			"detail": "Build the ts plugins and start the server",
+			"path": "./ts",
+			"isBackground": true
 		},
 		{
 			"type": "npm",
-			"script": "server",
+			"script": "serve",
 			"problemMatcher": [],
-			"label": "Run server (JS)",
+			"label": "Serve (JS)",
 			"detail": "Runs the local server for hosting the plugins as a separate task",
-			"path": "./js"
+			"path": "./js",
+			"isBackground": true
 		}
 	]
 }
