@@ -9,7 +9,7 @@
 				"isDefault": true
 			},
 			"problemMatcher": [],
-			"label": "Build",
+			"label": "Build Typescript Project",
 			"detail": "Build all components and refresh js files",
 			"path": "./ts"
 		},
@@ -17,9 +17,17 @@
 			"type": "npm",
 			"script": "server",
 			"problemMatcher": [],
-			"label": "Run server",
+			"label": "Run server (TS)",
 			"detail": "Runs the local server for hosting the plugins as a separate task",
 			"path": "./ts"
+		},
+		{
+			"type": "npm",
+			"script": "server",
+			"problemMatcher": [],
+			"label": "Run server (JS)",
+			"detail": "Runs the local server for hosting the plugins as a separate task",
+			"path": "./js"
 		}
 	]
 }

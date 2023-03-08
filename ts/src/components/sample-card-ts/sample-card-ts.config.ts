@@ -1,10 +1,10 @@
 import { PluginContract } from '@nintex/form-plugin-contract';
 
 export const config: PluginContract = {
-    controlName: 'my-card',
+    controlName: 'sample-card-ts',
     fallbackDisableSubmit: false,
     description: 'Example of a visual card',
-    groupName: 'My Plugins',
+    groupName: 'Samples',
     version: '1.0',
     properties: {
         cardTitle: {

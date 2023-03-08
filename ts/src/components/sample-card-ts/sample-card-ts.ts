@@ -2,13 +2,13 @@ import { PluginContract } from '@nintex/form-plugin-contract';
 import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-@customElement('my-card')
+@customElement('sample-card-ts')
 export class MyCardTS extends LitElement {
     @property({ type: String })
-    cardTitle = "This is a card";
+    cardTitle = "Card Title";
 
     @property({ type: String })
-    cardText = "my-card TS plugin";
+    cardText = "This is a bootstrap card";
 
     @property({ type: String })
     imageUrl = "https://www.nintex.com/wp-content/themes/portent_nintex/ui/images/nintex_logo.svg";
@@ -23,7 +23,7 @@ export class MyCardTS extends LitElement {
     centerText = false;
 
     static getMetaConfig(): Promise<PluginContract> | PluginContract {
-        return import('./my-card.config').then((pkg) => { return pkg.config })
+        return import('./sample-card-ts.config').then((pkg) => { return pkg.config })
     }
 
     render = () => {

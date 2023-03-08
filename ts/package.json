@@ -1,5 +1,5 @@
 {
-    "name": "nac-cards",
+    "name": "nac-plugins-ts",
     "version": "1.0.0",
     "description": "",
     "type": "module",
@@ -8,16 +8,8 @@
         "build": "rollup -c",
         "start": "npm run build && npm run server"
     },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/jpoul/nac-cards.git"
-    },
     "author": "",
     "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/jpoul/nac-cards/issues"
-    },
-    "homepage": "https://github.com/jpoul/nac-cards#readme",
     "dependencies": {
         "lit": "^2.6.1"
     },
