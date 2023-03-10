@@ -1,3 +1,9 @@
+/*
+    Google Maps Directory Service 
+    This PlugIn is used to calc Direction between 2 places using the Maps API
+*/
+
+
 
 import { html,LitElement,css} from 'https://cdn.jsdelivr.net/gh/lit/dist@2/all/lit-all.min.js';
 
