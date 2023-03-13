@@ -1,3 +1,9 @@
+/*
+    Google Maps Canvas  
+    This PlugIn can be used to show the location on a map on the form
+*/
+
+
 import { html,LitElement,css} from 'https://cdn.jsdelivr.net/gh/lit/dist@2/all/lit-all.min.js';
 
 

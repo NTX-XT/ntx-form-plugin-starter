@@ -1,3 +1,7 @@
+/*
+    Google Maps Directory Service 
+    This PlugIn is used to calc Direction between 2 places using the Maps API
+*/
 
 import { html,LitElement,css} from 'https://cdn.jsdelivr.net/gh/lit/dist@2/all/lit-all.min.js';
 
@@ -35,8 +39,6 @@ export class DirectionsPlugin extends LitElement {
 
   `;
  
-
-  
   // return a promise for contract changes.
   static getMetaConfig() {
     return {
@@ -123,24 +125,15 @@ export class DirectionsPlugin extends LitElement {
     }
   }     
   
-
-  
   constructor() {
     super();
     this.checkAdress();
-
-    
-    //this.calc = this.calculateValues();   
-    
   }
 
 
   headerTemplate() {
     return html` <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>       
-             
-   
-                
                 `;
   }
 
@@ -148,12 +141,8 @@ export class DirectionsPlugin extends LitElement {
     return html` </div> `;
   }
   
-
-  
-
   render() {        
 
-    
     return html`       
         
            ${this.headerTemplate()}
