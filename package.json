@@ -4,7 +4,7 @@
     "description": "",
     "type": "module",
     "scripts": {
-        "server": "node ../packages/localdev -f ./dist",
+        "server": "node ./packages/localdev -f ./dist",
         "build": "rollup -c",
         "start": "npm run build && npm run server"
     },
@@ -25,10 +25,11 @@
         "@rollup/plugin-commonjs": "^24.0.0",
         "@rollup/plugin-node-resolve": "^15.0.1",
         "babel": "^6.23.0",
-        "localdev": "file:../localdev",
+        "localdev": "file:./packages/localdev",
         "prettier": "^2.7.1",
         "rollup": "^3.9.1",
         "rollup-plugin-cleaner": "^1.0.0",
+        "rollup-plugin-copy": "^3.4.0",
         "typescript": "^4.9.5"
     }
 }

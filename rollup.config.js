@@ -4,6 +4,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import { babel } from '@rollup/plugin-babel';
 import path from 'path';
 import { existsSync, readdirSync } from 'fs';
+import copy from 'rollup-plugin-copy';
 
 /**
  * This is used to split out the individual Web components into there own js output
@@ -13,13 +14,13 @@ import { existsSync, readdirSync } from 'fs';
  */
 const getPrimaryComponent = source =>
     readdirSync(source, { withFileTypes: true })
-        .filter(entry => entry.isDirectory())
-        .map(entry => path.join(source, entry.name, `${entry.name}.ts`))
-        .filter(x => existsSync(x));
+    .filter(entry => entry.isDirectory())
+    .map(entry => path.join(source, entry.name, `${entry.name}.ts`))
+    .filter(x => existsSync(x));
 
 const individualComponents = getPrimaryComponent('./src/components');
 const additionalFiles = []
-// const additionalFiles = ['./src/index.ts']
+    // const additionalFiles = ['./src/index.ts']
 
 export default [{
     input: [...additionalFiles, ...individualComponents],
@@ -65,5 +66,10 @@ export default [{
                 ['@babel/plugin-proposal-class-properties'],
             ],
         }),
+        copy({
+            targets: [
+                { src: 'src/components/**/*.js', dest: 'dist' }
+            ]
+        })
     ],
-},];
+}, ];

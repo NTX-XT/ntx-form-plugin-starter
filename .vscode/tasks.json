@@ -10,25 +10,16 @@
 			},
 			"problemMatcher": [],
 			"label": "Build",
-			"detail": "Build typescript plugins",
-			"path": "./ts"
+			"detail": "Build the plugins",
+			"path": "./"
 		},
 		{
 			"type": "npm",
 			"script": "start",
 			"problemMatcher": [],
-			"label": "Serve (TS)",
+			"label": "Serve",
 			"detail": "Build the ts plugins and start the server",
-			"path": "./ts",
-			"isBackground": true
-		},
-		{
-			"type": "npm",
-			"script": "serve",
-			"problemMatcher": [],
-			"label": "Serve (JS)",
-			"detail": "Runs the local server for hosting the plugins as a separate task",
-			"path": "./js",
+			"path": "./",
 			"isBackground": true
 		}
 	]
