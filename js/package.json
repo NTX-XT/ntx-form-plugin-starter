@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "type": "module",
     "scripts": {
-        "serve": "node ../localdev -f ./plugins -p 8081",
+        "serve": "node ../packages/localdev -f ./plugins -p 8081",
         "start": "npm run serve"
     },
     "author": "",
