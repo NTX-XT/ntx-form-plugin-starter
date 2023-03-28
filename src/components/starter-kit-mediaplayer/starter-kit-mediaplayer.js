@@ -25,7 +25,7 @@ export class MediaPlayerPlugIn extends LitElement {
         videosrc: {
           type: 'string',
           title: 'Media Source',
-          description: 'Youtube embeded link'
+          description: 'Importend Youtube embeded link is needed (e.g https://www.youtube.com/embed/vpKcM4MxPzc)'
         },       
         Platform: {
           title: 'Platform',
@@ -34,7 +34,7 @@ export class MediaPlayerPlugIn extends LitElement {
           showAsRadio: false,
           verticalLayout: true,
           defaultValue: 'YouTube',
-          description: 'Choose your Platform (YouTube is supported'
+          description: 'Choose your Platform (YouTube is supported)'
         }         
         
       }
@@ -43,8 +43,7 @@ export class MediaPlayerPlugIn extends LitElement {
 
 
   checkAdress() {
-     console.log("ha" + this.videosrc);   
-     console.log(this.Platform);
+     
      if(this.videosrc) {
          
       
@@ -109,5 +108,5 @@ export class MediaPlayerPlugIn extends LitElement {
 }
 
 // registering the web component
-const elementName = 'mediaplayer-plugin';
+const elementName = 'starter-kit-mediaplayer';
 customElements.define(elementName, MediaPlayerPlugIn);

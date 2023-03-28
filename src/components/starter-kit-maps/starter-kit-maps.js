@@ -1,23 +1,21 @@
 /*
-    Google Maps Directory Service 
-    This PlugIn is used to calc Direction between 2 places using the Maps API
+    Google Maps Canvas  
+    This PlugIn can be used to show the location on a map on the form
 */
+
 
 import { html,LitElement,css} from 'https://cdn.jsdelivr.net/gh/lit/dist@2/all/lit-all.min.js';
 
 
 // define the component
-export class DirectionsPlugin extends LitElement {
+export class MapsPlugin extends LitElement {
   
   static properties = {
     apiKey: {type: String}, 
-    origin: {type: String},
-    destination: {type: String},
+    FormattedAdress: {type: String},
     maptype: {type: String},
     long: {type: String}, 
-    zoom: {type: String},
-    avoid: {type: String},
-    mode: {type: String}
+    zoom: {type: String}
     
   }; 
 
@@ -39,10 +37,12 @@ export class DirectionsPlugin extends LitElement {
 
   `;
  
+
+  
   // return a promise for contract changes.
   static getMetaConfig() {
     return {
-      controlName: 'Maps Directions',
+      controlName: 'Maps Canvas',
       fallbackDisableSubmit: false,
       groupName: 'Google Maps',
       version: '1.2',
@@ -52,17 +52,13 @@ export class DirectionsPlugin extends LitElement {
           type: 'string',
           title: 'API Key',
           description: 'Please enter your Google API Key'
-        },        
-        origin: {
-          title: 'Orgin',
-          type: 'string',          
-          description: 'Defines the starting point from which to display directions.'
         },
-        destination: {
-          title: 'destination',
-            type: 'string',           
-            description: 'Defines the end point of the directions.'
-          },
+        
+        FormattedAdress: {
+          type: 'string',
+          title: 'Formatted Adress',
+          description: 'Please add from Adress Control the formatted Adress'
+        },
         maptype: {
           title: 'Map Type',
           type: 'string',
@@ -72,25 +68,6 @@ export class DirectionsPlugin extends LitElement {
           defaultValue: 'roadmap',
           description: 'Choose your Map Type: roadmap and satellite'
         },
-        avoid: {
-            title: 'Avoid on Route',
-            type: 'string',
-              enum: ['tolls', 'ferries','highways'],
-            showAsRadio: false,
-            verticalLayout: true,
-            defaultValue: 'tolls',
-            description: 'Specifies features to avoid in directions. Note that this doesnt preclude routes that include the restricted feature(s); it biases the result to more favorable routes.'
-          },
-          mode: {
-            title: 'Defines the method of travel',
-            type: 'string',
-              enum: ['driving', 'walking','bicycling','transit','flying'],
-            showAsRadio: false,
-            verticalLayout: true,
-            defaultValue: 'driving',
-            description: 'Defines the method of travel. If no mode is specified the Maps Embed API will show one or more of the most relevant modes for the specified route.'
-          },
-        
         zoom: {
           title: 'Zoom',
           type: 'string',
@@ -107,13 +84,13 @@ export class DirectionsPlugin extends LitElement {
 
 
   checkAdress() {
-    if(this.origin) {
-      console.log(this.origin);       
+    if(this.FormattedAdress) {
+      console.log(this.FormattedAdress);       
       
       return html`
        
        <div id="map-container-google-2" class="z-depth-1-half map-container" style="height: 500px">       
-       <iframe src="https://www.google.com/maps/embed/v1/directions?key=${this.apiKey}&origin=${this.origin}&destination=${this.destination}&maptype=${this.maptype}&zoom=${this.zoom}" frameborder="0" style="border:0" allowfullscreen>dd</iframe>       
+       <iframe src="https://www.google.com/maps/embed/v1/place?key=${this.apiKey}&q=${this.FormattedAdress}&maptype=${this.maptype}&zoom=${this.zoom}" frameborder="0" style="border:0" allowfullscreen>dd</iframe>       
 
       `;
     
@@ -125,15 +102,24 @@ export class DirectionsPlugin extends LitElement {
     }
   }     
   
+
+  
   constructor() {
     super();
     this.checkAdress();
+
+    
+    //this.calc = this.calculateValues();   
+    
   }
 
 
   headerTemplate() {
     return html` <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>       
+             
+   
+                
                 `;
   }
 
@@ -141,8 +127,12 @@ export class DirectionsPlugin extends LitElement {
     return html` </div> `;
   }
   
+
+  
+
   render() {        
 
+    
     return html`       
         
            ${this.headerTemplate()}
@@ -157,5 +147,5 @@ export class DirectionsPlugin extends LitElement {
 }
 
 // registering the web component
-const elementName = 'directions-plugin';
-customElements.define(elementName, DirectionsPlugin);
+const elementName = 'starter-kit-maps';
+customElements.define(elementName, MapsPlugin);
