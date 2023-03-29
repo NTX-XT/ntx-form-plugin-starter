@@ -13,38 +13,13 @@ export class MediaPlayerPlugIn extends LitElement {
     videosrc: {type: String}, 
     Platform: {type: String}   
   };
-  
-  // return a promise for contract changes.
-  static getMetaConfig() {
-    return {
-      controlName: 'Media Player',
-      fallbackDisableSubmit: false,
-      groupName: 'Media Player',
-      version: '1.2',
-      properties: {
-        videosrc: {
-          type: 'string',
-          title: 'Media Source',
-          description: 'Youtube embeded link'
-        },       
-        Platform: {
-          title: 'Platform',
-          type: 'string',
-        	enum: ['YouTube', 'Vimeo'],
-          showAsRadio: false,
-          verticalLayout: true,
-          defaultValue: 'YouTube',
-          description: 'Choose your Platform (YouTube is supported'
-        }         
-        
-      }
-    };
-  }
 
+  // return a promise for contract changes.
+  static getMetaConfig = () => config;
+  
 
   checkAdress() {
-     console.log("ha" + this.videosrc);   
-     console.log(this.Platform);
+     
      if(this.videosrc) {
          
       
@@ -109,5 +84,5 @@ export class MediaPlayerPlugIn extends LitElement {
 }
 
 // registering the web component
-const elementName = 'mediaplayer-plugin';
+const elementName = 'starter-kit-mediaplayer';
 customElements.define(elementName, MediaPlayerPlugIn);

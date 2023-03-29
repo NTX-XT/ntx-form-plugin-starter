@@ -5,6 +5,7 @@
 
 
 import { html,LitElement,css} from 'https://cdn.jsdelivr.net/gh/lit/dist@2/all/lit-all.min.js';
+import {config} from './starter-kit-maps.config';
 
 
 // define the component
@@ -36,53 +37,10 @@ export class MapsPlugin extends LitElement {
   }
 
   `;
- 
-
   
   // return a promise for contract changes.
-  static getMetaConfig() {
-    return {
-      controlName: 'Maps Canvas',
-      fallbackDisableSubmit: false,
-      groupName: 'Google Maps',
-      version: '1.2',
-      pluginAuthor: 'Sven Berling',
-      properties: {
-        apiKey: {
-          type: 'string',
-          title: 'API Key',
-          description: 'Please enter your Google API Key'
-        },
-        
-        FormattedAdress: {
-          type: 'string',
-          title: 'Formatted Adress',
-          description: 'Please add from Adress Control the formatted Adress'
-        },
-        maptype: {
-          title: 'Map Type',
-          type: 'string',
-        	enum: ['roadmap', 'satellite'],
-          showAsRadio: false,
-          verticalLayout: true,
-          defaultValue: 'roadmap',
-          description: 'Choose your Map Type: roadmap and satellite'
-        },
-        zoom: {
-          title: 'Zoom',
-          type: 'string',
-        	enum: ['1', '2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','21'],
-          showAsRadio: false,
-          verticalLayout: true,
-          defaultValue: '11',
-          description: 'Values from 0 (the whole world) to 21 (individual buildings). The upper limit may vary depending on the map data for the selected location.'
-        }   
-        
-      }
-    };
-  }
-
-
+  static getMetaConfig = () => config;
+    
   checkAdress() {
     if(this.FormattedAdress) {
       console.log(this.FormattedAdress);       
@@ -92,8 +50,7 @@ export class MapsPlugin extends LitElement {
        <div id="map-container-google-2" class="z-depth-1-half map-container" style="height: 500px">       
        <iframe src="https://www.google.com/maps/embed/v1/place?key=${this.apiKey}&q=${this.FormattedAdress}&maptype=${this.maptype}&zoom=${this.zoom}" frameborder="0" style="border:0" allowfullscreen>dd</iframe>       
 
-      `;
-    
+      `;    
     }
     else {      
       return html`
@@ -147,5 +104,5 @@ export class MapsPlugin extends LitElement {
 }
 
 // registering the web component
-const elementName = 'maps-plugin';
+const elementName = 'starter-kit-maps';
 customElements.define(elementName, MapsPlugin);
