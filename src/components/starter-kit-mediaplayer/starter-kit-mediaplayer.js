@@ -13,34 +13,10 @@ export class MediaPlayerPlugIn extends LitElement {
     videosrc: {type: String}, 
     Platform: {type: String}   
   };
-  
-  // return a promise for contract changes.
-  static getMetaConfig() {
-    return {
-      controlName: 'Media Player',
-      fallbackDisableSubmit: false,
-      groupName: 'Media Player',
-      version: '1.2',
-      properties: {
-        videosrc: {
-          type: 'string',
-          title: 'Media Source',
-          description: 'Importend Youtube embeded link is needed (e.g https://www.youtube.com/embed/vpKcM4MxPzc)'
-        },       
-        Platform: {
-          title: 'Platform',
-          type: 'string',
-        	enum: ['YouTube', 'Vimeo'],
-          showAsRadio: false,
-          verticalLayout: true,
-          defaultValue: 'YouTube',
-          description: 'Choose your Platform (YouTube is supported)'
-        }         
-        
-      }
-    };
-  }
 
+  // return a promise for contract changes.
+  static getMetaConfig = () => config;
+  
 
   checkAdress() {
      
