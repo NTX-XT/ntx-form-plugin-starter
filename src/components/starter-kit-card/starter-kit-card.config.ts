@@ -9,33 +9,33 @@ export const config: PluginContract = {
 	properties: {
 		cardTitle: {
 			type: 'string',
-			title: 'Title'
+			title: 'Title',
 		},
 		cardText: {
 			type: 'string',
-			title: 'Text'
+			title: 'Text',
 		},
 		imageUrl: {
 			type: 'string',
-			title: 'Image URL'
+			title: 'Image URL',
 		},
 		link: {
 			type: 'string',
-			title: 'Link URL'
+			title: 'Link URL',
 		},
 		darkMode: {
 			type: 'boolean',
-			title: 'Dark mode'
+			title: 'Dark mode',
 		},
 		centerText: {
 			type: 'boolean',
-			title: 'Center text'
-		}
+			title: 'Center text',
+		},
 	},
 	standardProperties: {
 		fieldLabel: false,
 		description: false,
 		defaultValue: false,
-		readOnly: false
+		readOnly: false,
 	},
 }
