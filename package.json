@@ -6,7 +6,8 @@
     "scripts": {
         "server": "node ./packages/localdev -f ./dist",
         "build": "rollup -c",
-        "start": "npm run build && npm run server"
+        "start": "npm run build && npm run server",
+        "lint": "eslint ."
     },
     "author": "",
     "license": "ISC",
@@ -40,6 +41,7 @@
         "eslint-plugin-lit": "^1.8.2",
         "eslint-plugin-n": "^15.6.1",
         "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-prettier": "^4.2.1",
         "eslint-plugin-promise": "^6.1.1",
         "localdev": "file:./packages/localdev",
         "prettier": "^2.7.1",

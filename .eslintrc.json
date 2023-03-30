@@ -1,103 +1,57 @@
 {
-    "parser": "@babel/eslint-parser",
-    "parserOptions": {
-        "requireConfigFile": false
-    },
-    "plugins": [
-        "import",
-        "lit",
-        "node"
-    ],
-    "settings": {
-        "import/ignore": [
-            "https://$"
-        ]
-    },
-    "extends": [
-        "eslint:recommended",
-        "standard",
-        "prettier",
-        "plugin:lit/recommended",
-        "plugin:node/recommended",
-        "plugin:import/recommended"
-    ],
-    "overrides": [
-        {
-            "files": [
-                "*.ts",
-                "*.tsx"
-            ],
-            "plugins": [
-                "@typescript-eslint"
-            ],
-            "extends": [
-                "plugin:@typescript-eslint/recommended",
-                "plugin:@typescript-eslint/eslint-recommended",
-                "plugin:@typescript-eslint/recommended-requiring-type-checking",
-                "plugin:import/typescript"
-            ],
-            "parser": "@typescript-eslint/parser",
-            "parserOptions": {
-                "project": [
-                    "./tsconfig.json"
-                ]
-            },
-            "settings": {
-                "import/resolver": {
-                    "typescript": true,
-                    "node": true
-                }
-            },
-            "rules": {
-                "node/no-missing-import": "off"
-            }
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["import", "lit", "node"],
+  "settings": {
+    "import/ignore": ["https://$"]
+  },
+  "extends": ["eslint:recommended", "standard", "prettier", "plugin:lit/recommended", "plugin:node/recommended", "plugin:import/recommended"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "plugins": ["@typescript-eslint"],
+      "extends": ["plugin:@typescript-eslint/recommended", "plugin:@typescript-eslint/eslint-recommended", "plugin:@typescript-eslint/recommended-requiring-type-checking", "plugin:import/typescript"],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "project": ["./tsconfig.json"],
+        "sourceType": "module"
+      },
+      "settings": {
+        "import/resolver": {
+          "typescript": true,
+          "node": true
         }
-    ],
-    "env": {
-        "es2020": true,
-        "node": true
-    },
-    "ignorePatterns": [
-        "dist",
-        "node_modules",
-        "examples",
-        "scripts"
-    ],
-    "rules": {
-        "array-bracket-spacing": "error",
-        "array-bracket-newline": "error",
-        "arrow-body-style": "off",
-        "no-multiple-empty-lines": [
-            "error",
-            {
-                "max": 1,
-                "maxEOF": 0
-            }
-        ],
-        "brace-style": [
-            "error",
-            "1tbs",
-            {
-                "allowSingleLine": true
-            }
-        ],
-        "comma-spacing": [
-            "error",
-            {
-                "before": false,
-                "after": true
-            }
-        ],
-        "comma-style": [
-            "error",
-            "last"
-        ],
-        "curly": [
-            "error",
-            "all"
-        ],
-        "node/no-missing-import": "off",
-        "import/no-unresolved": "off",
-        "no-undef": "warn"
+      }
     }
+  ],
+  "env": {
+    "es2020": true,
+    "node": true,
+    "browser": true
+  },
+  "ignorePatterns": ["dist", "node_modules", "examples", "scripts"],
+  "rules": {
+    "array-bracket-spacing": ["error", "never"],
+    "array-bracket-newline": ["error", { "multiline": true }],
+    "array-element-newline": ["error", "consistent", { "multiline": true }],
+    "arrow-body-style": "off",
+    "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
+    "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
+    "comma-spacing": ["error", { "before": false, "after": true }],
+    "comma-style": ["error", "last"],
+    "curly": ["error", "all"],
+    "node/no-missing-import": "off",
+    "node/no-unpublished-import": "off",
+    "import/no-unresolved": "off",
+    "no-undef": "warn",
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "never",
+        "exports": "always-multiline",
+        "functions": "never"
+      }
+    ]
+  }
 }
