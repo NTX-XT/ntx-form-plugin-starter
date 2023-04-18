@@ -1,7 +1,7 @@
 import { type PluginContract } from '@nintex/form-plugin-contract'
 import { html, LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { config } from './starter-kit-card.config';
+import { config } from './starter-kit-hello.config';
 
 @customElement('starter-kit-card')
 export class MyCardTS extends LitElement {

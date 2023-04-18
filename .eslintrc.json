@@ -30,28 +30,29 @@
   },
   "ignorePatterns": ["dist", "node_modules", "examples", "scripts"],
   "rules": {
-    "array-bracket-spacing": ["error", "never"],
-    "array-bracket-newline": ["error", { "multiline": true }],
-    "array-element-newline": ["error", "consistent", { "multiline": true }],
-    "arrow-body-style": "off",
-    "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
-    "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
-    "comma-spacing": ["error", { "before": false, "after": true }],
-    "comma-style": ["error", "last"],
-    "curly": ["error", "all"],
     "node/no-missing-import": "off",
     "node/no-unpublished-import": "off",
-    "import/no-unresolved": "off",
-    "no-undef": "warn",
-    "comma-dangle": [
-      "error",
-      {
-        "arrays": "always-multiline",
-        "objects": "always-multiline",
-        "imports": "never",
-        "exports": "always-multiline",
-        "functions": "never"
-      }
-    ]
+    "import/no-unresolved": "off"
   }
+  //   "array-bracket-spacing": ["error", "never"],
+  //   "array-element-newline": ["error", "consistent", { "multiline": true }],
+  //   "arrow-body-style": "off",
+  //   "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
+  //   "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
+  //   "comma-spacing": ["error", { "before": false, "after": true }],
+  //   "comma-style": ["error", "last"],
+  //   "curly": ["error", "all"],
+
+  //   "no-undef": "warn",
+  //   "comma-dangle": [
+  //     "error",
+  //     {
+  //       "arrays": "always-multiline",
+  //       "objects": "always-multiline",
+  //       "imports": "never",
+  //       "exports": "always-multiline",
+  //       "functions": "never"
+  //     }
+  //   ]
+  // }
 }
