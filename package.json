@@ -1,8 +1,8 @@
 {
-    "name": "@nintex/form-plugin-starter-ts",
+    "name": "@ntx/ntx-form-plugin-starter",
     "private": true,
     "version": "1.0.0",
-    "description": "A simple Nintex Forms plugin",
+    "description": "A template repository for creating Nintex Form plugins",
     "type": "module",
     "scripts": {
         "server": "npx ntx-localdev -f ./dist",
