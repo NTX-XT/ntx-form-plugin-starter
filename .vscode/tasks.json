@@ -1,26 +1,26 @@
 {
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"type": "npm",
-			"script": "build",
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			},
-			"problemMatcher": [],
-			"label": "Build",
-			"detail": "Build the plugins",
-			"path": "./"
-		},
-		{
-			"type": "npm",
-			"script": "start",
-			"problemMatcher": [],
-			"label": "Serve",
-			"detail": "Build the ts plugins and start the server",
-			"path": "./",
-			"isBackground": true
-		}
-	]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "build",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "label": "Build",
+      "detail": "Build the plugins",
+      "path": "./"
+    },
+    {
+      "type": "npm",
+      "script": "start",
+      "problemMatcher": [],
+      "label": "Serve",
+      "detail": "Build the plugins and start the server",
+      "path": "./",
+      "isBackground": true
+    }
+  ]
 }
