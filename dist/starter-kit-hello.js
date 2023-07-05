@@ -565,7 +565,7 @@ var config = {
 };
 
 var _templateObject;
-var MyCardTS = _decorate([e$1('starter-kit-card')], function (_initialize, _LitElement) {
+var MyCardTS = _decorate([e$1('starter-kit-hello')], function (_initialize, _LitElement) {
   var MyCardTS = /*#__PURE__*/function (_LitElement2) {
     _inherits(MyCardTS, _LitElement2);
     var _super = _createSuper(MyCardTS);

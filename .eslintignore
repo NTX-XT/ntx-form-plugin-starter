@@ -1,5 +1,5 @@
-node_modules
-dist
-lib
-build
-coverage
+node_modules/*
+docs/*
+docs-src/*
+rollup-config.js
+custom-elements.json

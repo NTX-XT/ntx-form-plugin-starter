@@ -3,7 +3,7 @@ import cleaner from 'rollup-plugin-cleaner';
 import commonjs from '@rollup/plugin-commonjs';
 import { babel } from '@rollup/plugin-babel';
 import path from 'path';
-import { existsSync, readdirSync } from 'fs';
+import { existsSync, readFileSync, readdirSync } from 'fs';
 import copy from 'rollup-plugin-copy';
 
 /**
@@ -15,11 +15,15 @@ import copy from 'rollup-plugin-copy';
 
 const getPrimaryComponent = source =>
     readdirSync(source, { withFileTypes: true })
-    .filter(entry => entry.isDirectory())
-    .map(entry => path.join(source, entry.name, `${entry.name}.ts`))
-    .filter(x => existsSync(x));
+        .filter(entry => entry.isDirectory())
+        .map(entry => path.join(source, entry.name, `${entry.name}.ts`))
+        .filter(x => existsSync(x));
 
-const individualComponents = getPrimaryComponent('./src/components');
+
+const tsconfig = JSON.parse(readFileSync('./tsconfig.json', 'utf8'));
+const outputFolder = tsconfig.compilerOptions.outDir
+const inputFolder = tsconfig.compilerOptions.rootDir
+const individualComponents = getPrimaryComponent(`${inputFolder}/components`);
 
 /* Add more inputs if needed */
 const additionalFiles = []
@@ -30,12 +34,14 @@ export default [{
         format: 'es',
         chunkFileNames: '[name]-[hash].js',
         entryFileNames: '[name].js',
-        dir: './dist',
+        dir: outputFolder,
         sourcemap: true,
     },
 
     plugins: [
-        cleaner({ targets: ['./dist/'] }),
+        cleaner({
+            targets: [`${outputFolder}/`]
+        }),
         resolve({ extensions: ['.ts', '.js'] }),
         commonjs({ include: ['node_modules/**'] }),
         babel({
@@ -56,6 +62,6 @@ export default [{
                 ['@babel/plugin-proposal-class-properties'],
             ],
         }),
-        copy({ targets: [{ src: 'src/components/**/*.js', dest: 'dist' }] }),
+        copy({ targets: [{ src: `${inputFolder}/components/**/*.js`, dest: outputFolder }] }),
     ],
 }];

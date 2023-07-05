@@ -1,58 +1,46 @@
 {
-  "parser": "@typescript-eslint/parser",
-  "plugins": ["import", "lit", "node"],
-  "settings": {
-    "import/ignore": ["https://$"]
-  },
-  "extends": ["eslint:recommended", "standard", "prettier", "plugin:lit/recommended", "plugin:node/recommended", "plugin:import/recommended"],
-  "overrides": [
-    {
-      "files": ["*.ts", "*.tsx"],
-      "plugins": ["@typescript-eslint"],
-      "extends": ["plugin:@typescript-eslint/recommended", "plugin:@typescript-eslint/eslint-recommended", "plugin:@typescript-eslint/recommended-requiring-type-checking", "plugin:import/typescript"],
-      "parser": "@typescript-eslint/parser",
-      "parserOptions": {
-        "project": ["./tsconfig.json"],
-        "sourceType": "module"
-      },
-      "settings": {
-        "import/resolver": {
-          "typescript": true,
-          "node": true
-        }
-      }
-    }
+  "root": true,
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
   ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint"],
   "env": {
-    "es2020": true,
-    "node": true,
     "browser": true
   },
-  "ignorePatterns": ["dist", "node_modules", "examples", "scripts"],
   "rules": {
-    "node/no-missing-import": "off",
-    "node/no-unpublished-import": "off",
-    "import/no-unresolved": "off"
-  }
-  //   "array-bracket-spacing": ["error", "never"],
-  //   "array-element-newline": ["error", "consistent", { "multiline": true }],
-  //   "arrow-body-style": "off",
-  //   "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
-  //   "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
-  //   "comma-spacing": ["error", { "before": false, "after": true }],
-  //   "comma-style": ["error", "last"],
-  //   "curly": ["error", "all"],
-
-  //   "no-undef": "warn",
-  //   "comma-dangle": [
-  //     "error",
-  //     {
-  //       "arrays": "always-multiline",
-  //       "objects": "always-multiline",
-  //       "imports": "never",
-  //       "exports": "always-multiline",
-  //       "functions": "never"
-  //     }
-  //   ]
-  // }
+    "no-prototype-builtins": "off",
+    "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["rollup.config.js"],
+      "env": {
+        "node": true
+      }
+    },
+    {
+      "files": ["*_test.ts", "**/custom_typings/*.ts"],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off"
+      }
+    }
+  ]
 }
