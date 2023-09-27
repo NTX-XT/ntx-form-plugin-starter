@@ -19,7 +19,7 @@ export class StarterKitCard extends LitElement {
     @property({ type: Boolean })
     centerText = false
 
-    private imageUrl = 'https://www.nintex.com/wp-content/themes/portent_nintex/ui/images/nintex_logo.svg'
+    private imageUrl = 'https://www.google.com/logos/doodles/2023/googles-25th-birthday-6753651837110114-6752733080610507-cst.gif'
 
     override render = () => {
         const cardStyle = this.darkMode ? 'text-white bg-dark' : ''
