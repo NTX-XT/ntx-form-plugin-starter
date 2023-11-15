@@ -3,24 +3,43 @@
   "tasks": [
     {
       "type": "npm",
-      "script": "build",
+      "script": "build:dev",
       "group": {
         "kind": "build",
         "isDefault": true
       },
       "problemMatcher": [],
       "label": "Build",
-      "detail": "Build the plugins",
+      "detail": "Development build",
+      "path": "./",
+      "isBackground": true
+    },
+    {
+      "type": "npm",
+      "script": "publish",
+      "group": {
+        "kind": "build"
+      },
+      "problemMatcher": [],
+      "label": "Publish",
+      "detail": "Build and publish to Azure Blob Storage",
       "path": "./"
     },
     {
       "type": "npm",
       "script": "start",
+      "label": "Start",
       "problemMatcher": [],
-      "label": "Serve",
-      "detail": "Build the plugins and start the server",
+      "hide": true,
       "path": "./",
       "isBackground": true
+    },
+    {
+      "label": "Debug",
+      "detail": "Start the local server with a development build",
+      "dependsOn": ["Build", "Start"],
+      "dependsOrder": "parallel",
+      "problemMatcher": []
     }
   ]
 }
