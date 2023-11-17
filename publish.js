@@ -21,8 +21,9 @@ for (const file of fs.readdirSync('./build/release', {withFileTypes: true})) {
     const publishedPath = (process.env.AZURE_STORAGE_FOLDER_NAME ? `${process.env.AZURE_STORAGE_FOLDER_NAME}/${file.name}` : file.name)
     const blockBlobClient = containerClient.getBlockBlobClient(publishedPath);
     const data = fs.readFileSync(`./build/release/${file.name}`, {encoding: 'UTF8'})
-    const uploaded = await blockBlobClient.upload(data, data.length, {
+    await blockBlobClient.upload(data, data.length, {
       blobHTTPHeaders: headers
     })
+
     console.log(`${file.name} published @ ${blockBlobClient.url}`);
 }
