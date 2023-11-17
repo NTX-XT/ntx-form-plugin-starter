@@ -3,6 +3,7 @@ import { LitElement, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { config } from './sk-hello-world.config';
 import { styles } from './sk-hello-world.styles';
+import { addBootstrap } from '../../templates';
 
 @customElement('plugin-elementname')
 export class PageHighlight extends LitElement {
@@ -17,6 +18,7 @@ export class PageHighlight extends LitElement {
 
     override render() {
         return html`
+            ${addBootstrap}
             <div>
                 <h1>Hello world</h1>
                 <span style='color: ${this.color}'>${this.message}</span>
