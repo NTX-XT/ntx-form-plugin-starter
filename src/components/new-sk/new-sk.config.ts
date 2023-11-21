@@ -4,22 +4,25 @@ export const config: PluginContract = {
 	controlName: '__pluginControlName__',
 	groupName: '__pluginGroupName__',
 	fallbackDisableSubmit: false,
-	description: 'Hello World',
+	description: '',
 	version: '1.0',
 	properties: {
-		color: {
+		sampleProperty: {
 			type: 'string',
-			title: 'Text Color',
+			title: 'Sample Property',
 		},
-		message: {
+		value: {
 			type: 'string',
-			title: 'Your message to the world',
+			title: 'Value',
+			isValueField: true,
 		},
 	},
+	events: ['ntx-value-change'],
 	standardProperties: {
-		fieldLabel: false,
-		description: false,
-		defaultValue: false,
-		readOnly: false,
+		fieldLabel: true,
+		description: true,
+		defaultValue: true,
+		readOnly: true,
+		visibility: true,
 	},
 };

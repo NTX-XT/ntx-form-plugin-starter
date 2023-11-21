@@ -9,18 +9,25 @@
             "request": "launch",
             "name": "Debug rollup built",
             "runtimeExecutable": "npm",
-			"runtimeArgs": ["run-script", "build", "--preserve-symlinks"],
-			"skipFiles": ["<node_internals>/**"]
-            
+					"runtimeArgs": ["run-script", "build", "--preserve-symlinks"],
+					"skipFiles": ["<node_internals>/**"]            
         },
         {
             "type": "node",
             "request": "launch",
             "name": "Debug publish script",
             "runtimeExecutable": "npm",
-			"runtimeArgs": ["run-script", "publish", "--preserve-symlinks"],
-			"skipFiles": ["<node_internals>/**"]
-            
+					"runtimeArgs": ["run-script", "publish", "--preserve-symlinks"],
+					"skipFiles": ["<node_internals>/**"]				
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug generation script",
+            "runtimeExecutable": "npm",
+						"runtimeArgs": ["run-script", "generate", "--preserve-symlinks"],
+						"console": "integratedTerminal",
+						"skipFiles": ["<node_internals>/**"]				
         }
     ]
 }
