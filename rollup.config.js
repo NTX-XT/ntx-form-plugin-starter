@@ -50,7 +50,7 @@ export default [
 			chunkFileNames: `[name]${elementNameSuffix}-[hash].js`,
 			entryFileNames: `[name]${elementNameSuffix}.js`,
 			dir: outputFolder,
-			sourcemap: process.env.DEV ? true : 'inline',
+			sourcemap: !!process.env.DEV,
 		},
 		plugins: [
 			cleaner({
